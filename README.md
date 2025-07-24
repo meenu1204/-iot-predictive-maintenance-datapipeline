@@ -31,6 +31,6 @@ h. Containerise with Docker
 2. Install dependencies
 3. Run the project
    python src/main.py
-5. Run an Airflow DAG or Streamlit dashboard
-6. 
+4. Run an Airflow DAG or Streamlit dashboard
+   
 

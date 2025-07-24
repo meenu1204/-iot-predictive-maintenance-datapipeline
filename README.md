@@ -25,6 +25,19 @@ f. Visualise machine alerts using Streamlit
 g. Orchestrate tasks using Apache Airflow
 h. Containerise with Docker
 
+## Technologies Used:
+--------------------
+Tool	                          Purpose
+Python	                    Core scripting
+Pandas/Numpy	            Data transformation
+Matplotlib	            Static data visualization
+Streamlit	             Interactive dashboards
+Apache Airflow	        Orchestration of ETL pipeline
+SQLite / PostgreSQL	       Data persistence
+Docker	                   Containerization
+dotenv	                   Config management
+pytest	                     Unit testing
+
 ## Installation
 
 1. Clone the repo

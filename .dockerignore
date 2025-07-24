@@ -1,0 +1,44 @@
+# Ignore Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore local virtual environments
+.venv/
+venv/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore Airflow logs
+logs/
+
+# Ignore DB files
+*.db
+
+# Ignore data output (optional)
+data/processed/*
+!data/processed/.gitkeep  # allow folder to stay if needed
+
+# Ignore plots
+plots/*.png
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS metadata
+.DS_Store
+
+# Ignore test temp files or folders
+tmp_files/
+
+# Ignore IDE and system files
+.idea/
+.DS_Store
+
+# Python venv and environment files
+.venv/
+.env
+

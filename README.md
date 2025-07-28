@@ -36,7 +36,21 @@ A cloud-ready, production-grade data pipeline that processes IoT sensor logs fro
 
 ## Project Structure
 
-``` ├── dags/ # Airflow DAGs for scheduling ├── dashboard/ # Streamlit dashboards ├── data/ # Raw and processed data ├── plots/ # Saved charts and graphs ├── src/ # Core ETL logic, KPIs, visualization ├── tests/ # Unit tests ├── Dockerfile # Docker configuration ├── requirements.txt # Python dependencies └── README.md # Project overview ```
+
+## Project Structure
+
+```
+├── dags/              # Airflow DAGs for scheduling
+├── dashboard/         # Streamlit dashboards
+├── data/              # Raw and processed data
+├── plots/             # Saved charts and graphs
+├── src/               # Core ETL logic, KPIs, visualization
+├── tests/             # Unit tests
+├── Dockerfile         # Docker configuration
+├── requirements.txt   # Python dependencies
+└── README.md          # Project overview
+```
+
 
 ## Installation
 

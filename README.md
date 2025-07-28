@@ -49,6 +49,21 @@ A cloud-ready, production-grade data pipeline that processes IoT sensor logs fro
 └── README.md          # Project overview
 ```
 
+## Project Setup
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/meenu1204/iot-predictive-maintenance-datapipeline
+cd iot-predictive-maintenance-datapipeline
+```
+
+
+git clone https://github.com/your-username/iot-predictive-maintenance-datapipeline.git
+cd iot-predictive-maintenance-datapipeline
+
+
+
 
 ## Installation
 

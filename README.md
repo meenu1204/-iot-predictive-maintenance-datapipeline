@@ -1,42 +1,42 @@
-# iot-predictive-maintenance-datapipeline
+# IoT Predictive Maintenance Data Pipeline
 
-A production-ready data pipeline that processes IoT sensor logs from machines that can help anticipate equipment failures.
+## Description
 
-## Project structure
---------------------
-├── dags/ # (Optional) Airflow DAGs for scheduling
-├── dashboard/ # Visual dashboards (e.g., Streamlit)
-├── data/ # Raw and processed data
-├── plots/ # Saved charts, graphs, etc.
-├── src/ # Core logic: data loading, preprocessing, calculate KPIs, data visualisation
-├── tests/ # Unit tests
-├── Dockerfile # Docker config for consistent environments
-├── requirements.txt # Python dependencies
-└── README.md # Project overview
+A cloud-ready, production-grade data pipeline that processes IoT sensor logs from machines to predict and prevent equipment failures. The pipeline supports automated ETL, KPIs calculation, dashboards, containerization, and AWS ECS (Fargate) deployment with centralized logging in CloudWatch.
 
-## Pipeline features:
---------------------
-a. Load the raw IoT Sensor data
-b. Clean, validate and transform sensor data
-c. Calculate machine health KPIs
-d. Store cleaned data + KPIs in SQLite
-e. Visualise trends and anomalies using matplotlib
-f. Visualise machine alerts using Streamlit
-g. Orchestrate tasks using Apache Airflow
-h. Containerise with Docker
+## Features
 
-## Technologies Used:
---------------------
-Tool	                          Purpose
-Python	                    Core scripting
-Pandas/Numpy	            Data transformation
-Matplotlib	            Static data visualization
-Streamlit	             Interactive dashboards
-Apache Airflow	        Orchestration of ETL pipeline
-SQLite / PostgreSQL	       Data persistence
-Docker	                   Containerization
-dotenv	                   Config management
-pytest	                     Unit testing
+- Data Ingestion: Load raw IoT sensor data from CSV
+- Data Cleaning & Transformation: Preprocess sensor data
+- Machine Health KPIs: Calculate performance indicators
+- Data Persistence: Store processed data and KPIs in SQLite
+- Visualization:
+   - Matplotlib → Static charts
+   - Streamlit → Interactive dashboards with alerts
+- Task Orchestration: Apache Airflow for automated ETL workflows
+- Containerization: Docker for consistent environments
+- AWS Deployment: ECS (Fargate) with ECR and CloudWatch for logging
+- Testing: pytest for unit testing
+
+## Tech Stack
+
+| Tool/Service                   | Purpose                        |
+|--------------------------------|--------------------------------|
+| Python                         | Core scripting                 |
+| Pandas/Numpy	                  | Data transformation            |
+| Matplotlib                     | Static data visualization      |              | Streamlit                      | Interactive dashboards         |
+| Apache Airflow                 | Orchestrating ETL pipeline     |
+| SQLite                         | Data storage                   |
+| Docker                         | Containerization               | 
+| AWS ECS (Fargate)              | Serverless container deployment|
+| AWS ECR                        | Image repository               |
+| AWS CloudWatch                 | Centralized logging            |
+| dotenv                         | Config management              |
+| pytest                         | Unit testing                   |
+
+## Project Structure
+
+``` ├── dags/ # Airflow DAGs for scheduling ├── dashboard/ # Streamlit dashboards ├── data/ # Raw and processed data ├── plots/ # Saved charts and graphs ├── src/ # Core ETL logic, KPIs, visualization ├── tests/ # Unit tests ├── Dockerfile # Docker configuration ├── requirements.txt # Python dependencies └── README.md # Project overview ```
 
 ## Installation
 

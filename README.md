@@ -24,7 +24,8 @@ A cloud-ready, production-grade data pipeline that processes IoT sensor logs fro
 |--------------------------------|--------------------------------|
 | Python                         | Core scripting                 |
 | Pandas/Numpy	                  | Data transformation            |
-| Matplotlib                     | Static data visualization      |              | Streamlit                      | Interactive dashboards         |
+| Matplotlib                     | Static data visualization      |              
+| Streamlit                      | Interactive dashboards         |
 | Apache Airflow                 | Orchestrating ETL pipeline     |
 | SQLite                         | Data storage                   |
 | Docker                         | Containerization               | 
@@ -33,9 +34,6 @@ A cloud-ready, production-grade data pipeline that processes IoT sensor logs fro
 | AWS CloudWatch                 | Centralized logging            |
 | dotenv                         | Config management              |
 | pytest                         | Unit testing                   |
-
-## Project Structure
-
 
 ## Project Structure
 

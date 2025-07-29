@@ -20,6 +20,7 @@ from src.main.logger_config import setup_logger
 # Setting up a module-specific logger
 logger = setup_logger(__name__)
 
+# Default arguments for Airflow DAG
 default_args = {
     "owner": "airflow",
     "email": ["meenumary12@gmail.com"],
@@ -28,6 +29,7 @@ default_args = {
     "retry_delay": timedelta(minutes=5)
 }
 
+# Define DAG
 with DAG(
     dag_id="etl_pipeline_dag",
     default_args=default_args,
@@ -38,6 +40,7 @@ with DAG(
     tags=["etl", "sensor"],
 ) as dag:
 
+    # Task 1: Load raw IoT sensor data
     def task_load_data(**context):
         try:
             df_raw = load_csv(RAW_DATA_PATH)
@@ -47,6 +50,7 @@ with DAG(
             logger.error("Failed to load raw data: {}".format(e))
             raise
 
+    # Task 2: Preprocess the data
     def task_preprocess_data(**context):
         try:
             raw_json = context['ti'].xcom_pull(key="raw_df")
@@ -58,6 +62,8 @@ with DAG(
             logger.error("Failed to preprocess raw data: {}".format(e))
             raise
 
+
+    # Task 3: Calculate machine KPIs
     def task_calculate_kpi(**context):
         try:
             clean_json = context['ti'].xcom_pull(key="clean_df")
@@ -69,6 +75,7 @@ with DAG(
             logger.error("Failed to calculate kpi: {}".format(e))
             raise
 
+    # Task 4: Save cleaned data and KPIs to SQLite DB
     def task_save_to_db(**context):
         try:
             preprocess_df = pd.read_json(context['ti'].xcom_pull(key="clean_df"))
@@ -79,6 +86,8 @@ with DAG(
             logger.error("Failed to save cleaned data: {}".format(e))
             raise
 
+
+    # Task 5: Generate data visualizations
     def task_visualise(**context):
         try:
             data_visualise(DB_PATH)
@@ -87,11 +96,13 @@ with DAG(
             logger.error("Failed to visualise data: {}".format(e))
             raise
 
+    # Define Airflow tasks using PythonOperator
     t1 = PythonOperator(task_id='load_data', python_callable=task_load_data)
     t2 = PythonOperator(task_id='preprocess_data', python_callable=task_preprocess_data)
     t3 = PythonOperator(task_id='calculate_kpi', python_callable=task_calculate_kpi)
     t4 = PythonOperator(task_id='save_to_db', python_callable=task_save_to_db)
     t5 = PythonOperator(task_id='visualise_data', python_callable=task_visualise)
 
+    # Set task execution order
     t1 >> t2 >> t3 >> t4 >> t5
 

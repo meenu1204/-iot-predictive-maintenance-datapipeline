@@ -62,6 +62,11 @@ cd iot-predictive-maintenance-datapipeline
 ```bash
 python -m src.main.main
 ```
+3.  Launch the Interactive IoT Dashboard using Streamlit
+
+```bash
+streamlit run dashboard/dashboard_app.py
+```
 
 ## Installation
 

@@ -58,13 +58,6 @@ git clone https://github.com/meenu1204/iot-predictive-maintenance-datapipeline
 cd iot-predictive-maintenance-datapipeline
 ```
 
-
-git clone https://github.com/your-username/iot-predictive-maintenance-datapipeline.git
-cd iot-predictive-maintenance-datapipeline
-
-
-
-
 ## Installation
 
 1. Clone the repo

@@ -8,10 +8,6 @@ __pycache__/
 .venv/
 venv/
 
-# Ignore environment files
-.env
-.env.*
-
 # Ignore Airflow logs
 logs/
 
@@ -40,5 +36,4 @@ tmp_files/
 
 # Python venv and environment files
 .venv/
-.env
 
